@@ -223,7 +223,7 @@ function startTimer() {
  */
 function whack(event) {
 	// TODO: Write your code here.
-	updateScore()
+	updateScore();
 	return points;
 }
 
@@ -258,7 +258,7 @@ function setDuration(duration) {
  *
  */
 function stopGame() {
-	stopAudio(song);  //optional
+	//stopAudio(song);  //optional
 	clearInterval(timer);
 	return 'game stopped';
 }
@@ -281,7 +281,7 @@ function stopGame() {
 */
 function startGame() {
 	clearScore();
-	stopGame();   //optional
+	stopGame(); //optional
 	setDuration(10);
 	setEventListeners();
 	startTimer();
