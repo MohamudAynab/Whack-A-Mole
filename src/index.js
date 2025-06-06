@@ -223,7 +223,7 @@ function startTimer() {
  */
 function whack(event) {
 	// TODO: Write your code here.
-	// call updateScore()
+	updateScore()
 	return points;
 }
 
@@ -234,7 +234,9 @@ function whack(event) {
  */
 function setEventListeners() {
 	// TODO: Write your code here
-
+	for (let i = 0; i < moles.length; i++) {
+		moles[i].addEventListener('click', whack);
+	}
 	return moles;
 }
 
@@ -256,7 +258,7 @@ function setDuration(duration) {
  *
  */
 function stopGame() {
-	// stopAudio(song);  //optional
+	stopAudio(song);  //optional
 	clearInterval(timer);
 	return 'game stopped';
 }
@@ -278,12 +280,12 @@ function stopGame() {
  * Note: Simply uncommenting `setDuration(10);` and `showUp();` is not enough. To make the game work, ensure all necessary functions listed above are called to initialize the score, timer, event listeners, and mole appearances. 
 */
 function startGame() {
-	//clearScore();
-	//stopGame();   //optional
-	//setDuration(10);
-	//setEventListeners();
-	//startTimer();
-	//showUp();
+	clearScore();
+	stopGame();   //optional
+	setDuration(10);
+	setEventListeners();
+	startTimer();
+	showUp();
 	return 'game started';
 }
 
